@@ -3,7 +3,8 @@ MAINTAINER jon.gretarsson@gmail.com
 
 RUN apt-get update -y && \
     apt-get install -y calibre && \
-    apt-get purge -y
+    apt-get purge -y && apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 8080
 
